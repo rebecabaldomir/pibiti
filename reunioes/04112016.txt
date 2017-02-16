@@ -1,0 +1,11 @@
+1- escolher um cnpj
+2- selecionar todos os itens de compras dele
+3- para cada item buscar todos os cnpjs relacionados
+4- gerando uma lista de cnpj por item
+5- uniao dessas listas vai ser a entrada pro apriori
+
+
+6- procurar suporte e confiança(procurar sobre qualidade da regra -> vinicius)
+7- olhar lift
+
+8- ler monografia andre e renato(dropbox)-fundamentação

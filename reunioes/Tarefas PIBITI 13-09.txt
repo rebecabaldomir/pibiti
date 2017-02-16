@@ -1,0 +1,6 @@
+Tarefas PIBITI:
+1. exemplos na internet de regras de associação tanto no python quanto no spark
+2. como aplicar as regras no spark
+
+3. anotar tudo que estudar/usar
+4. olhar os formatos dos documentos na dropbox, acompanhamento, resumo, relatório final.
