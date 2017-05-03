@@ -24,6 +24,14 @@ class APIBanco(object):
 		self.cur.execute(query)
 
 		return self.format()
+	def buscarDadosCNPJs(self, cnpjs):
+		self.cur = self.db.cursor()
+
+		query = ("select iditemcompra, cnpj from licitacoes where iditemcompra in (select iditemcompra from licitacoes where cnpj = '" + cnpj + "')  limit 50")
+
+		self.cur.execute(query)
+
+		return self.format()
 
 	def searchCNPJS(self, regras):
 		

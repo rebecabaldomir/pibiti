@@ -28,17 +28,18 @@ if __name__ == '__main__':
 	conf = {
 		'/': {
 			'tools.sessions.on': True,
-			'tools.staticdir.root': os.path.abspath(os.getcwd())
+			'tools.staticdir.debug': True,
+			'tools.staticdir.root': os.path.dirname(os.path.abspath(__file__))
 		},
 		'/cnpj': {
 			'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
 			'tools.response_headers.on': True,
 			'tools.response_headers.headers': [('Content-Type', 'application/json')],
 		},
-		'/static': {
-			'tools.staticdir.on': True,
-			'tools.staticdir.dir': './public'
-		}
+		'/css': {
+          'tools.staticdir.on': True,
+          'tools.staticdir.dir': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'css/')
+        }
 	}
 	webapp = AprioriApp()
 	webapp.cnpj = AprioriAPI()
