@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<title></title>
+</head>
+<body >
+	<div class="container">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+					  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+					  crossorigin="anonymous">			  	
+		</script>
+
+	    <script type="text/javascript">
+	    	$(document).ready(function() {
+		    	$("#get-cnpj").click(function(e) {
+		    		var cnpj = $("input[name=cnpj]").val()	
+	          		$.ajax({
+	            		type: "GET",
+	            		url: '/cnpj?cnpj=' + cnpj,
+	            		dataType: 'json',
+	            		success: function(data) {
+	            			for(var i =0; i<data.length; i++){
+	            				console.log(data[i])
+	            				$('#result').append("<li>" + data[i] + "</li>")	
+	            			}
+	            		}
+	          		})
+	          	e.preventDefault();
+	        	});    
+	    	})	
+	    </script>
+
+	    <input type="text" name="cnpj"/>
+	    <button id="get-cnpj">Pesquisar</button>
+	    <ul id="result"></ul>
+	</div>
+</body>
+</html>
