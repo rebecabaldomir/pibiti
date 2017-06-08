@@ -6,6 +6,7 @@ from rpy2.robjects.packages import importr
 import mysql.connector
 from APIBanco import *
 from APIRegras import *
+import time
 
 
 class AprioriApp(object):
@@ -13,14 +14,16 @@ class AprioriApp(object):
 	def index(self):
 		return open('interface.html')
 
-
 @cherrypy.expose
 class AprioriAPI(object):
 	@cherrypy.tools.json_out()
 	def GET(self, cnpj):
+		ini = time.time()
 		data = APIBanco().search(cnpj)
 		regras = APIRegras().applyApriori()
 		cnpjs = APIBanco().searchCNPJS(regras)
+		fim = time.time()
+		print("\n\n\n\n\n\n TEMPO: \n\n\n\n\n\n", fim-ini)
 		retorno = str(cnpjs)
 		return cnpjs
 

@@ -1,0 +1,25 @@
+dada um empresa, tem outras empresas q aparecem frequentemente com ela q justificaria investigá-las tbm?
+
+problema: identificar possiveis conluios ou carteis
+
+usar o trabalho do carlos(descoberta de conhecimento, mas o nosso é mais proximo de sistema de recomendação) para justificar a linha do trabalho
+
+solução: aplicar regras de associação para identificar possível relacionamentos entre as empresas
+
+pq regras de associação(não é supervisionada), o que é, falar sobre o apriori(suporte e confiança = poda na arvore)
+
+usar fluxograma para explicar o apriori
+
+analise de dados = baseado no feedback dos auditores
+
+prototipo:
+python para usar cherrypy para futuramente colocar no cluster(facil de integrar com R, justificar pq a gente usou R = não achar biblioteca adequadas e achamos validar o prototipo antes de implementar o algoritmo, nomes bonitinhos das bibliotecas)
+
+===> no prototipo: apresentar a regra normal a->b apresentar sempre o suporte e a confiança
+https://jqueryui.com/slider/ para suporte e confiança
+
+Apresentar o prototipo, dizer q irá disponibilizar para os auditores daCGU utilizarem para avaliarem(adicionar empresas fraudulentas e ver no resultado das regras quais são as interessantes) e finalizar(slide com conclusão(resumao) e trabalhos futuros(mensurar melhor as regras, testar algoritmos, cluster etc))
+
+registros do banco 4.482.006
+Confiança: quantidade de instâncias preditas corretamente pela regra (acurácia/corretude da regra).
+Suporte: probabilidade da regra se repetir no conjunto de dados.

@@ -34,13 +34,24 @@ class APIBanco(object):
 		return self.format()
 
 	def searchCNPJS(self, regras):
-		
-		cnpjs = tuple(regras[2].levels)
+		#print(regras)
 		dados = []
-		for cnpj in cnpjs:
-			dados.append(cnpj.replace("{", "").replace("}",""))
-		#print(dados)
-		#self.format()
+		antes_da_seta = []
+		depois_da_seta = []
+		for label in regras[0].iter_labels():
+			antes_da_seta.append(label)
+		
+		for label in regras[2].iter_labels():
+			depois_da_seta.append(label)
+		#print(regras[0].iter_labels())
+		print(str(regras[2]))
+		#print(str(cnpjAlto))
+		#print(str(cnpjs))
+		for i in range(0, len(antes_da_seta)):
+			value1 = antes_da_seta[i].replace("{", "").replace("}","")
+			value2 = depois_da_seta[i].replace("{", "").replace("}","")
+			dados.append(value1 + " => " + value2)
+		print(dados)
 		return dados
 	
 	def format(self):

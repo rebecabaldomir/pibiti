@@ -14,5 +14,5 @@ class APIRegras(object):
 	def applyApriori(self):
 		ro.r("compras <- read.transactions(file = 'dadosParaAplicarRegras.csv', format = 'single', sep = ',', cols = c(1,2))")
 		ro.r("rules <- apriori(data = compras, parameter = list(support=0.3, confidence=0.95))")
-		regras = ro.r("inspect(head(sort(rules, by='lift'	),20))")
+		regras = ro.r("inspect(head(sort(rules, by='lift'),15))")
 		return regras
